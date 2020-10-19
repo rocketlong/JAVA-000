@@ -11,7 +11,7 @@ public class CustomClassLoader extends AbstractClassLoader {
         byte[] bytes = super.getClassFileBytes(path);
         byte[] resBytes = new byte[bytes.length];
         for (int i = 0; i < bytes.length; i++) {
-            resBytes[i] = (byte) ((byte) 255 - bytes[i]);
+            resBytes[i] = (byte) (255 - bytes[i]);
         }
         return resBytes;
     }
