@@ -1,4 +1,4 @@
-package com.geek.week01.example;
+package com.geek.week01.example.caseload;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

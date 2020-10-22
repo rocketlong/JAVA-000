@@ -1,9 +1,4 @@
-package com.geek.week01.example;
-
-import com.geek.week01.work.practice2.CustomClassLoader;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
+package com.geek.week01.example.caseload;
 
 /**
  * @author limingjian
@@ -11,10 +6,11 @@ import java.lang.reflect.Method;
 public class ClassLoadMain {
 
     public static void main(String[] args) throws Exception {
-        String path = "Week_01/week01/src/main/java/com/geek/week01/example/Foo.class";
+        // javac -encoding utf-8 Week_01/week01/src/main/java/com/geek/week01/example/caseload/Foo.java
+        String path = "Week_01/week01/src/main/java/com/geek/week01/example/caseload/Foo.class";
         ClassLoader1 loader1 = new ClassLoader1(path);
         ClassLoader2 loader2 = new ClassLoader2(path);
-        String className = "com.geek.week01.example.Foo";
+        String className = "com.geek.week01.example.caseload.Foo";
         try {
             Class<?> foo1 = loader1.loadClass(className);
             Class<?> foo2 = loader2.loadClass(className);

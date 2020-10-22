@@ -1,4 +1,4 @@
-package com.geek.week01.example;
+package com.geek.week01.example.caseload;
 
 public class Foo {
 
