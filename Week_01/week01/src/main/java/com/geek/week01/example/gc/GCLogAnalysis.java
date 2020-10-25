@@ -9,6 +9,12 @@ import java.util.concurrent.atomic.LongAdder;
  */
 // javac -encoding UTF-8 .\com\geek\week01\example\gc\GCLogAnalysis.java
 // java com.geek.week01.example.gc.GCLogAnalysis
+// java -XX:+PrintGCDetails com.geek.week01.example.gc.GCLogAnalysis
+// java -Xloggc:gc.demo.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps com.geek.week01.example.gc.GCLogAnalysis
+// java -Xmx128m -XX:+PrintGCDetails com.geek.week01.example.gc.GCLogAnalysis
+// java -XX:+UseSerialGC -Xms128m -Xmx128m -XX:+PrintGCDetails -XX:+PrintGCDateStamps com.geek.week01.example.gc.GCLogAnalysis
+// java -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps com.geek.week01.example.gc.GCLogAnalysis
+// java -XX:+UseG1GC -Xms512m -Xmx512m -XX:+PrintGC -XX:+PrintGCDateStamps com.geek.week01.example.gc.GCLogAnalysis
 public class GCLogAnalysis {
 
     private static Random random = new Random();
