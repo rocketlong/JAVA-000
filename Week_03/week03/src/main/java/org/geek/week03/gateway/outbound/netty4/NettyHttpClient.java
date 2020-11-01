@@ -74,13 +74,9 @@ public class NettyHttpClient {
         f.addListener((FutureListener<Channel>) future -> {
             // 给服务端发送数据
             Channel channel = future.getNow();
-            ChannelFuture channelFuture = channel.writeAndFlush(fullRequest);
-            channelFuture.addListener((GenericFutureListener<? extends Future<? super Void>>) future1 -> {
-                byte[] body = EntityUtils.toByteArray((HttpEntity) future1.getNow());
-
-                // 连接放回连接池，这里一定记得放回去
-                pool.release(channel);
-            });
+            channel.writeAndFlush(fullRequest);
+            // 连接放回连接池，这里一定记得放回去
+            pool.release(channel);
         });
     }
 
