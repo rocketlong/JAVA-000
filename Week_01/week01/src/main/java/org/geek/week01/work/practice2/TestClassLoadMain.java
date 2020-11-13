@@ -6,7 +6,7 @@ public class TestClassLoadMain {
 
     public static void main(String[] args) {
         try {
-            Class<?> clazz = new CustomClassLoader("Week_01/week01/src/main/java/com/geek/week01/work/practice2/Hello.xlass")
+            Class<?> clazz = new CustomClassLoader("Week_01/week01/src/main/java/org/geek/week01/work/practice2/Hello.xlass")
                     .findClass("Hello"); // 无包名
             Object obj = clazz.newInstance();
             Method hello = clazz.getDeclaredMethod("hello");
