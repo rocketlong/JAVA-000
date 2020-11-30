@@ -27,7 +27,7 @@ public class DataSourceConfig {
 
     @Bean
     @Primary
-    public DynamicDataSource dataSource(DataSource primaryDataSource, DataSource secondaryDataSource) {
+    public DataSource dataSource(DataSource primaryDataSource, DataSource secondaryDataSource) {
         Map<Object, Object> targetDataSources = new HashMap<>();
         targetDataSources.put(DataSourceNames.SLAVE_01, secondaryDataSource);
         return new DynamicDataSource(primaryDataSource, targetDataSources);
