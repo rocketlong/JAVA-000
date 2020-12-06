@@ -1,5 +1,32 @@
-
-
+spring:
+  datasource:
+    primary:
+      jdbc-url: jdbc:mysql://localhost:3306/db?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      driver-class-name: com.mysql.jdbc.Driver
+      pool-name: HikariPool-1
+      maximum-pool-size: 100
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+    secondary01:
+      jdbc-url: jdbc:mysql://localhost:3316/db?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      driver-class-name: com.mysql.jdbc.Driver
+      pool-name: HikariPool-2
+      maximum-pool-size: 100
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+    secondary02:
+      jdbc-url: jdbc:mysql://localhost:3326/db?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      driver-class-name: com.mysql.jdbc.Driver
+      pool-name: HikariPool-2
+      maximum-pool-size: 100
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      connection-timeout: 30000
 
 mybatis:
   type-aliases-package: org.geek.dynamic01.model
@@ -7,4 +34,5 @@ mybatis:
     map-underscore-to-camel-case: true
     default-fetch-size: 100
     default-statement-timeout: 3000
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mapper/*.xml
